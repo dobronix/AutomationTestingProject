@@ -1,6 +1,7 @@
 package Pages;
 
 import HelperMethods.ElementsHelpers;
+import ObjectData.SignUpLogInFormObjectData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,20 +29,20 @@ public class SingUpLoginPage {
     @FindBy(xpath = "//*[@data-qa='login-button']")
     WebElement loginButton;
 
-    public void completeName(String text) {
-        elementsHelpers.fillElement(fullName, text);
+    public void completeName(SignUpLogInFormObjectData data1) {
+        elementsHelpers.fillElement(fullName, data1.getFullName());
     }
-    public void comleteEmail(String text){
-        elementsHelpers.fillElement(email,text);
+    public void comleteEmail(SignUpLogInFormObjectData data1){
+        elementsHelpers.fillElement(email, data1.getEmail());
     }
     public void cliclSLButton(){
         elementsHelpers.clickOnElement(submit);
     }
-    public void addEmail(String text){
-        elementsHelpers.fillElement(logInEmail,text);
+    public void addEmail(SignUpLogInFormObjectData data1){
+        elementsHelpers.fillElement(logInEmail, data1.getLogInEmail());
     }
-    public void addPass(String text){
-        elementsHelpers.fillElement(loginPassword,text);
+    public void addPass(SignUpLogInFormObjectData data1){
+        elementsHelpers.fillElement(loginPassword, data1.getLogInPassword());
     }
     public void clickLogIn(){
         elementsHelpers.clickOnElement(loginButton);
@@ -75,35 +76,35 @@ public class SingUpLoginPage {
         elementsHelpers.clickOnElement(deleteButton);
     }
 
-    public void unsuccesfullSignUp(String name, String email){
-        completeName(name);
-        comleteEmail(email);
+    public void unsuccesfullSignUp(SignUpLogInFormObjectData data1){
+        completeName(data1);
+        comleteEmail(data1);
         cliclSLButton();
         assertEmailExist("Email Address already exist!");
 
     }
-    public void successfullLogIn(String email,String password){
-        addEmail(email);
-        addPass(password);
+    public void successfullLogIn(SignUpLogInFormObjectData data1){
+        addEmail(data1);
+        addPass(data1);
         clickLogIn();
         assertLoggedIng();
     }
-    public void unsuccesfullLogIn(String email, String password){
-        addEmail(email);
-        addPass(password);
+    public void unsuccesfullLogIn(SignUpLogInFormObjectData data1){
+        addEmail(data1);
+        addPass(data1);
         clickLogIn();
         assertUnsLogin();
     }
-    public void logOut(String email, String password){
-        addEmail(email);
-        addPass(password);
+    public void logOut(SignUpLogInFormObjectData data1){
+        addEmail(data1);
+        addPass(data1);
         clickLogIn();
         clickLogOut();
         assertUrl("https://www.automationexercise.com/login");
     }
-    public void deleteAcc(String email,String password){
-        addEmail(email);
-        addPass(password);
+    public void deleteAcc(SignUpLogInFormObjectData data1){
+        addEmail(data1);
+        addPass(data1);
         clickLogIn();
         clickDelete();
         assertUrl("https://www.automationexercise.com/delete_account");

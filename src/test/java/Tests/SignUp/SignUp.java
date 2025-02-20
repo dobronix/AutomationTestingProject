@@ -1,6 +1,7 @@
 package Tests.SignUp;
 
 import ObjectData.SignUpFormObjectData;
+import ObjectData.SignUpLogInFormObjectData;
 import Pages.HomePage;
 import Pages.SingUpLoginPage;
 import Pages.SingUpPage;
@@ -17,18 +18,21 @@ public class SignUp extends ShareData {
     SingUpLoginPage singUpLoginPage;
     HomePage homePage;
     private Map<String, SignUpFormObjectData> signUpFormObjectDataMap;
+    private Map<String, SignUpLogInFormObjectData> signUpLogInFormObjectDataMap;
 
     @Test
 
     public void SignUpTest() throws InterruptedException {
         signUpFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpFormData.xml", SignUpFormObjectData.class);
+        signUpLogInFormObjectDataMap =XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
         SignUpFormObjectData data = signUpFormObjectDataMap.get("dataSet_1");
+        SignUpLogInFormObjectData data1 = signUpLogInFormObjectDataMap.get("dataSet_1");
         singUpPage = new SingUpPage(getDriver());
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnLogin();
-        singUpLoginPage.completeName("dobro");
-        singUpLoginPage.comleteEmail("dobro@ddasd.com");
+        singUpLoginPage.completeName(data1);
+        singUpLoginPage.comleteEmail(data1);
         singUpLoginPage.cliclSLButton();
         Thread.sleep(2000);
         singUpPage.CompleteSingUp(data);
