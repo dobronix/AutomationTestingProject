@@ -1,6 +1,5 @@
 package Pages;
 
-import HelperMethods.ContactHelpers;
 import HelperMethods.ElementsHelpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 public class ContactUsPage {
     WebDriver driver;
     ElementsHelpers elementsHelpers;
-    ContactHelpers contactHelpers;
+
     public ContactUsPage(WebDriver driver){
         this.driver = driver;
         this.elementsHelpers = new ElementsHelpers(driver);
-        this.contactHelpers = new ContactHelpers(driver);
+
         PageFactory.initElements(driver,this);
 
     }
@@ -46,7 +45,7 @@ public class ContactUsPage {
         elementsHelpers.fillElement(contactMessage,text);
     }
     public void addCfile(){
-        contactHelpers.addFIle(contactAddFIle,"src/test/resources/menTshirt.jpg");
+        elementsHelpers.addFIle(contactAddFIle,"src/test/resources/menTshirt.jpg");
     }
     public void submitContact(){
         elementsHelpers.clickOnElement(contactSubmit);
@@ -55,7 +54,7 @@ public class ContactUsPage {
         elementsHelpers.assertText(contactSucces,text);
     }
     public void acceptAllert(){
-        contactHelpers.allert();
+        elementsHelpers.allert();
     }
     public void completeContactUsPage(String name, String email, String subject, String yourmessage){
         fillCname(name);

@@ -1,6 +1,7 @@
 package HelperMethods;
 
 import com.beust.ah.A;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.testng.Assert;
 
 import javax.lang.model.element.Element;
 import javax.swing.*;
+import java.io.File;
 import java.util.List;
 
 public class ElementsHelpers {
@@ -56,6 +58,15 @@ public class ElementsHelpers {
                 break;
             }
         }
+    }
+    public void addFIle(WebElement element,String text){
+        File shirt = new File(text);
+        String absolutePath = shirt.getAbsolutePath();
+        element.sendKeys(absolutePath);
+    }
+    public void allert(){
+        Alert allert = driver.switchTo().alert();
+        allert.accept();
     }
 
 }
