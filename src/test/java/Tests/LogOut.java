@@ -1,4 +1,4 @@
-package Tests.LogIn;
+package Tests;
 
 import ObjectData.SignUpLogInFormObjectData;
 import Pages.HomePage;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Map;
 
-public class DeleteAcc extends ShareData {
+public class LogOut extends ShareData {
 
     SingUpLoginPage singUpLoginPage;
     HomePage homePage;
@@ -17,13 +17,13 @@ public class DeleteAcc extends ShareData {
 
     @Test
 
-    public void deleteAccTest(){
+    public void LogOutmetod(){
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
         SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_1");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnLogin();
-        singUpLoginPage.deleteAcc(data1);
+        singUpLoginPage.logOut(data1);
 
     }
 }

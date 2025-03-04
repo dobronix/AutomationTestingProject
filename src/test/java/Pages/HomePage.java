@@ -33,8 +33,7 @@ public class HomePage {
 
     @FindBy(xpath = "//*[text()= ' Contact us']")
     WebElement contactUs;
-    @FindBy(xpath ="//*[text()=' Logged in as ']")
-    WebElement logInDisplayed;
+
 
     public void clickOnConsent()
     {
@@ -60,9 +59,7 @@ public class HomePage {
     {
         elementsHelpers.clickOnElement(contactUs);
     }
-    public void assertLoggedIng(){
-        elementsHelpers.assertDisplay(logInDisplayed);
-    }
+
 
 
 

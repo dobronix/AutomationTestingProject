@@ -1,4 +1,4 @@
-package Tests.LogIn;
+package Tests;
 
 import ObjectData.SignUpLogInFormObjectData;
 import Pages.HomePage;
@@ -9,21 +9,22 @@ import org.testng.annotations.Test;
 
 import java.util.Map;
 
-public class UnsuccessfulLogIn extends ShareData {
+public class SuccessfulLogIn extends ShareData {
 
     SingUpLoginPage singUpLoginPage;
     HomePage homePage;
     private Map<String, SignUpLogInFormObjectData> singUpLogInFormObjectDataMap;
 
+
     @Test
 
-    public void unlogInTest(){
+    public void LogINTest(){
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
         SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_1");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnLogin();
-        singUpLoginPage.unsuccesfullLogIn(data1);
+        singUpLoginPage.successfullLogIn(data1);
 
     }
 }

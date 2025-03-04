@@ -1,4 +1,4 @@
-package Tests.SignUp;
+package Tests;
 
 import ObjectData.SignUpLogInFormObjectData;
 import Pages.HomePage;

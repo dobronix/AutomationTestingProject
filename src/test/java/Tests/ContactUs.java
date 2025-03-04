@@ -1,4 +1,4 @@
-package Tests.Contact;
+package Tests;
 
 import Pages.ContactUsPage;
 import Pages.HomePage;
