@@ -87,7 +87,7 @@
 
     </dependencies>
 
-   <!-- <profiles>
+    <profiles>
         <profile>
             <id>CustomSuite</id>
             <build>
@@ -98,6 +98,7 @@
                     <version>3.2.5</version>
                     <configuration>
                         <suiteXmlFiles>
+                            <!--suppress UnresolvedMavenProperty -->
                             <suiteXmlFiles>${suiteXmlFile}.xml</suiteXmlFiles>
                         </suiteXmlFiles>
                     </configuration>
@@ -105,7 +106,7 @@
                 </plugins>
             </build>
         </profile>
-    </profiles>-->
+    </profiles>
 
     <build>
         <pluginManagement>
