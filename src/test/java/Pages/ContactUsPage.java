@@ -1,6 +1,7 @@
 package Pages;
 
 import HelperMethods.ElementsHelpers;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -65,6 +66,7 @@ public class ContactUsPage {
         submitContact();
         acceptAllert();
         assertContact("Success! Your details have been submitted successfully.");
+        ChainTestListener.log("Contact us completed");
     }
 
 

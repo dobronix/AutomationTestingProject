@@ -40,6 +40,7 @@ public class HomePage {
     public void clickOnConsent()
     {
         elementsHelpers.clickOnElement(consent);
+        ChainTestListener.log("Click on consent ");
     }
 
     public void clickOnProducts()

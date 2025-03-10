@@ -12,15 +12,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 import java.io.IOException;
-/*@Listeners(ChainTestListener.class)*/
+@Listeners(ChainTestListener.class)
 public class Hooks extends ShareData{
     String testName;
     @BeforeMethod
     public void prepareEnvironment(){
         testName = this.getClass().getSimpleName();
         initializeBrowser();
-        WebElement consent = getDriver().findElement(By.xpath("//p[text()='Consent']"));
-        consent.click(); //de scos de aici
         LoggerUtility.startTestCase(testName);
     }
     @AfterMethod

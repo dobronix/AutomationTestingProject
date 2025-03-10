@@ -14,26 +14,20 @@ import org.testng.annotations.Listeners;
 
 import java.io.IOException;
 
-/*@Listeners(ChainTestListener.class)*/
+
 public class  ShareData {
     private WebDriver driver;
 
 
     public void initializeBrowser(){
-        /*this.driver = new ChromeDriver();*/
         driver = new BrowserFactory().geBrowserFactory();
         driver.get("https://www.automationexercise.com/");
-        /*driver.manage().window().maximize();*/
-        /*WebElement consent = getDriver().findElement(By.xpath("//p[text()='Consent']"));
-        consent.click();
-*/
 
 
     }
 
     public void clearBrowser()  {
-       /* byte[] screenShot = ChainUtility.getScreenShot(getDriver(),"ChainTestSrc");
-        ChainTestListener.embed(screenShot,"image/png");*/
+
     driver.quit();
     }
 

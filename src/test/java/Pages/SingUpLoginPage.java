@@ -3,6 +3,7 @@ package Pages;
 import HelperMethods.ElementsHelpers;
 import Logger.LoggerUtility;
 import ObjectData.SignUpLogInFormObjectData;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -83,6 +84,7 @@ public class SingUpLoginPage {
         LoggerUtility.infoTest(" The user complete SignUp fields");
         cliclSLButton();
         LoggerUtility.infoTest(" The user click on SignUp button");
+        ChainTestListener.log("Name and email for sign up completed");
     }
 
     public void unsuccesfullSignUp(SignUpLogInFormObjectData data1){
@@ -92,6 +94,7 @@ public class SingUpLoginPage {
         cliclSLButton();
         LoggerUtility.infoTest(" The user click on SignUp button");
         assertEmailExist("Email Address already exist!");
+        ChainTestListener.log("Unable to sign up");
 
     }
     public void successfullLogIn(SignUpLogInFormObjectData data1){
@@ -101,6 +104,7 @@ public class SingUpLoginPage {
         clickLogIn();
         LoggerUtility.infoTest(" The user click on LogIn button");
         assertLoggedIng();
+        ChainTestListener.log("Log in successful");
     }
     public void unsuccesfullLogIn(SignUpLogInFormObjectData data1){
         addEmail(data1);
@@ -109,6 +113,7 @@ public class SingUpLoginPage {
         clickLogIn();
         LoggerUtility.infoTest(" The user click on LogIn button");
         assertUnsLogin();
+        ChainTestListener.log("Unable to log in");
     }
     public void logOut(SignUpLogInFormObjectData data1){
         addEmail(data1);
@@ -116,19 +121,19 @@ public class SingUpLoginPage {
         LoggerUtility.infoTest(" The user complete Login fields");
         clickLogIn();
         LoggerUtility.infoTest(" The user click on LogIn button");
+        ChainTestListener.log("Log in fields completed");
         clickLogOut();
         LoggerUtility.infoTest(" The user click on LogOut button");
         assertUrl("https://www.automationexercise.com/login");
+        ChainTestListener.log("User's logs out");
     }
     public void deleteAcc(SignUpLogInFormObjectData data1){
-        addEmail(data1);
-        addPass(data1);
-        LoggerUtility.infoTest(" The user complete Login fields");
-        clickLogIn();
-        LoggerUtility.infoTest(" The user click on LogIn button");
+        successfullLogIn(data1);
+        ChainTestListener.log("Log in fields completed");
         clickDelete();
         LoggerUtility.infoTest(" The user click on delete acc button");
         assertUrl("https://www.automationexercise.com/delete_account");
+        ChainTestListener.log("Account deleted");
     }
 
 

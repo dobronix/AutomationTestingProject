@@ -7,6 +7,7 @@ import Pages.SingUpLoginPage;
 import ShareDataBrowser.Hooks;
 import ShareDataBrowser.ShareData;
 import XmlReaderUtility.XmlReader;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -24,6 +25,9 @@ public class UnsuccessfulLogIn extends Hooks {
         SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_5");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
+        homePage.clickOnConsent();
+        ChainTestListener.log(" Click on consent ");
+        ChainTestListener.log("Open Home page ");
         homePage.clickOnLogin();
         singUpLoginPage.unsuccesfullLogIn(data1);
 

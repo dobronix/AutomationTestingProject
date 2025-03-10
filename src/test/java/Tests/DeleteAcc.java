@@ -6,6 +6,7 @@ import Pages.SingUpLoginPage;
 import ShareDataBrowser.Hooks;
 import ShareDataBrowser.ShareData;
 import XmlReaderUtility.XmlReader;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -20,9 +21,12 @@ public class DeleteAcc extends Hooks {
 
     public void deleteAccTest(){
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_3");
+        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_1");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
+        homePage.clickOnConsent();
+        ChainTestListener.log(" Click on consent ");
+        ChainTestListener.log("Open Home page ");
         homePage.clickOnLogin();
         singUpLoginPage.deleteAcc(data1);
 

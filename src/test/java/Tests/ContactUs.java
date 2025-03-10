@@ -17,10 +17,9 @@ public class ContactUs extends Hooks {
     public void ContactPage(){
         contactUsPage = new ContactUsPage(getDriver());
         homePage = new HomePage(getDriver());
-        ChainTestListener.log("Open Home page ");
+        homePage.clickOnConsent();
         homePage.clickOnContactUs();
-        ChainTestListener.log("Click contact us");
         contactUsPage.completeContactUsPage("Dobro", "dobro@2dbr.com", "Thank you, the product is what I expected", "Product Arrived");
-        ChainTestListener.log("Contact us completed");
+
     }
 }

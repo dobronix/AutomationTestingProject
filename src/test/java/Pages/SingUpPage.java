@@ -4,6 +4,7 @@ import HelperMethods.ElementsHelpers;
 import HelperMethods.SingUpPageHelpers;
 import Logger.LoggerUtility;
 import ObjectData.SignUpFormObjectData;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -167,6 +168,7 @@ public class SingUpPage {
         assertACC("ACCOUNT CREATED!");
         clickCont();
         LoggerUtility.infoTest(" The user click on Continue button");
+        ChainTestListener.log("Sign up completed");
     }
 
 
