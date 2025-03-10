@@ -98,7 +98,6 @@
                     <version>3.2.5</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <!--suppress UnresolvedMavenProperty -->
                             <suiteXmlFiles>${suiteXmlFile}.xml</suiteXmlFiles>
                         </suiteXmlFiles>
                     </configuration>
