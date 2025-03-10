@@ -23,13 +23,13 @@ public class Hooks extends ShareData{
     }
     @AfterMethod
     public void clearEnvironment(ITestResult result) throws IOException {
-        clearBrowser();
         if (result.getStatus() == ITestResult.FAILURE){
             LoggerUtility.errorLog(result.getThrowable().getMessage());
             byte[] screenShot = ChainUtility.getScreenShot(getDriver(),"ChainTestSrc");
             ChainTestListener.embed(screenShot,"image/png");
         }
         LoggerUtility.endTestCase(testName);
+        clearBrowser();
     }
     @AfterSuite
     public void finishLogs(){
