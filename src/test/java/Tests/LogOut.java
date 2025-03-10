@@ -20,7 +20,7 @@ public class LogOut extends Hooks {
 
     public void LogOutmetod(){
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_1");
+        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_4");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnLogin();
