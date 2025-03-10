@@ -2,6 +2,7 @@ package Pages;
 
 import HelperMethods.ElementsHelpers;
 import HelperMethods.SingUpPageHelpers;
+import Logger.LoggerUtility;
 import ObjectData.SignUpFormObjectData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -144,8 +145,6 @@ public class SingUpPage {
 
 
     public void CompleteSingUp(SignUpFormObjectData data) {
-        /*elementsHelpers.fillElement(password,data.getPassword());
-        singUpPageHelpers.selectGender(Mr,Mrs, data.getGender());*/
         useGender(data);
         fillPasswrod(data);
         selectDay(data);
@@ -162,9 +161,12 @@ public class SingUpPage {
         fillCity(data);
         fillZip(data);
         fillMobile(data);
+        LoggerUtility.infoTest(" The user complete all the SignUp fields");
         createBUtton();
+        LoggerUtility.infoTest(" The user click on CreateAcc button");
         assertACC("ACCOUNT CREATED!");
         clickCont();
+        LoggerUtility.infoTest(" The user click on Continue button");
     }
 
 

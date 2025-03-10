@@ -1,6 +1,8 @@
 package Pages;
 
 import HelperMethods.ElementsHelpers;
+import Logger.LoggerUtility;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,11 +55,15 @@ public class HomePage {
     public void clickOnLogin()
     {
         elementsHelpers.clickOnElement(login);
+        ChainTestListener.log("Click Signup/Login");
+        LoggerUtility.infoTest(" The user clicks on Signup/Login button");
     }
 
     public void clickOnContactUs()
     {
         elementsHelpers.clickOnElement(contactUs);
+        ChainTestListener.log("Click contact us");
+        LoggerUtility.infoTest(" The user clicks on Contact page");
     }
 
 

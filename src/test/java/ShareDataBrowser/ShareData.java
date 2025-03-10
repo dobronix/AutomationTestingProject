@@ -2,6 +2,7 @@ package ShareDataBrowser;
 
 
 import ChainTestUtility.ChainUtility;
+import ShareDataBrowser.Browser.BrowserFactory;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,26 +14,27 @@ import org.testng.annotations.Listeners;
 
 import java.io.IOException;
 
-@Listeners(ChainTestListener.class)
-public class ShareData {
+/*@Listeners(ChainTestListener.class)*/
+public class  ShareData {
     private WebDriver driver;
 
-@BeforeMethod
-    public void initializeBrowser(){
-        this.driver = new ChromeDriver();
-        driver.get("https://www.automationexercise.com/");
-        driver.manage().window().maximize();
-        WebElement consent = getDriver().findElement(By.xpath("//p[text()='Consent']"));
-        consent.click();
 
+    public void initializeBrowser(){
+        /*this.driver = new ChromeDriver();*/
+        driver = new BrowserFactory().geBrowserFactory();
+        driver.get("https://www.automationexercise.com/");
+        /*driver.manage().window().maximize();*/
+        /*WebElement consent = getDriver().findElement(By.xpath("//p[text()='Consent']"));
+        consent.click();
+*/
 
 
     }
-@AfterMethod
-    public void clearBrowser() throws IOException {
-        byte[] screenShot = ChainUtility.getScreenShot(getDriver(),"ChainTestSrc");
-        ChainTestListener.embed(screenShot,"image/png");
-    /*driver.quit();*/
+
+    public void clearBrowser()  {
+       /* byte[] screenShot = ChainUtility.getScreenShot(getDriver(),"ChainTestSrc");
+        ChainTestListener.embed(screenShot,"image/png");*/
+    driver.quit();
     }
 
     public WebDriver getDriver() {

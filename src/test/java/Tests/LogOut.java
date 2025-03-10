@@ -3,13 +3,14 @@ package Tests;
 import ObjectData.SignUpLogInFormObjectData;
 import Pages.HomePage;
 import Pages.SingUpLoginPage;
+import ShareDataBrowser.Hooks;
 import ShareDataBrowser.ShareData;
 import XmlReaderUtility.XmlReader;
 import org.testng.annotations.Test;
 
 import java.util.Map;
 
-public class LogOut extends ShareData {
+public class LogOut extends Hooks {
 
     SingUpLoginPage singUpLoginPage;
     HomePage homePage;

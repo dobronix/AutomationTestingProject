@@ -1,6 +1,7 @@
 package Pages;
 
 import HelperMethods.ElementsHelpers;
+import Logger.LoggerUtility;
 import ObjectData.SignUpLogInFormObjectData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -76,37 +77,57 @@ public class SingUpLoginPage {
         elementsHelpers.clickOnElement(deleteButton);
     }
 
+    public void succesfullSignUp(SignUpLogInFormObjectData data1){
+        completeName(data1);
+        comleteEmail(data1);
+        LoggerUtility.infoTest(" The user complete SignUp fields");
+        cliclSLButton();
+        LoggerUtility.infoTest(" The user click on SignUp button");
+    }
+
     public void unsuccesfullSignUp(SignUpLogInFormObjectData data1){
         completeName(data1);
         comleteEmail(data1);
+        LoggerUtility.infoTest(" The user complete SignUp fields");
         cliclSLButton();
+        LoggerUtility.infoTest(" The user click on SignUp button");
         assertEmailExist("Email Address already exist!");
 
     }
     public void successfullLogIn(SignUpLogInFormObjectData data1){
         addEmail(data1);
         addPass(data1);
+        LoggerUtility.infoTest(" The user complete Login fields");
         clickLogIn();
+        LoggerUtility.infoTest(" The user click on LogIn button");
         assertLoggedIng();
     }
     public void unsuccesfullLogIn(SignUpLogInFormObjectData data1){
         addEmail(data1);
         addPass(data1);
+        LoggerUtility.infoTest(" The user complete Login fields");
         clickLogIn();
+        LoggerUtility.infoTest(" The user click on LogIn button");
         assertUnsLogin();
     }
     public void logOut(SignUpLogInFormObjectData data1){
         addEmail(data1);
         addPass(data1);
+        LoggerUtility.infoTest(" The user complete Login fields");
         clickLogIn();
+        LoggerUtility.infoTest(" The user click on LogIn button");
         clickLogOut();
+        LoggerUtility.infoTest(" The user click on LogOut button");
         assertUrl("https://www.automationexercise.com/login");
     }
     public void deleteAcc(SignUpLogInFormObjectData data1){
         addEmail(data1);
         addPass(data1);
+        LoggerUtility.infoTest(" The user complete Login fields");
         clickLogIn();
+        LoggerUtility.infoTest(" The user click on LogIn button");
         clickDelete();
+        LoggerUtility.infoTest(" The user click on delete acc button");
         assertUrl("https://www.automationexercise.com/delete_account");
     }
 
