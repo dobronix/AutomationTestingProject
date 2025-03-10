@@ -20,22 +20,12 @@ public class ElementsHelpers {
     {
         this.driver = driver;
     }
-
     public void clickOnElement(WebElement element)
     {
         element.click();
     }
-
     public void fillElement(WebElement element,String text){
         element.sendKeys(text);
-    }
-
-
-
-    public void getCurrentUrl(String text)
-    {
-        String URL = driver.getCurrentUrl();
-        Assert.assertEquals(URL, text);
     }
     public void assertText(WebElement element ,String text){
         Assert.assertEquals(element.getText(),text);
@@ -59,11 +49,7 @@ public class ElementsHelpers {
             }
         }
     }
-    public void addFIle(WebElement element,String text){
-        File shirt = new File(text);
-        String absolutePath = shirt.getAbsolutePath();
-        element.sendKeys(absolutePath);
-    }
+
     public void allert(){
         Alert allert = driver.switchTo().alert();
         allert.accept();

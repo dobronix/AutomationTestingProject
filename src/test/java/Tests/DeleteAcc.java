@@ -21,7 +21,7 @@ public class DeleteAcc extends Hooks {
 
     public void deleteAccTest(){
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_1");
+        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_2");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnConsent();

@@ -1,32 +1,61 @@
 package Pages;
 
 import HelperMethods.ElementsHelpers;
-import HelperMethods.SingUpPageHelpers;
 import Logger.LoggerUtility;
 import ObjectData.SignUpFormObjectData;
 import com.aventstack.chaintest.plugins.ChainTestListener;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
 public class SingUpPage {
     WebDriver driver;
     ElementsHelpers elementsHelpers;
-    SingUpPageHelpers singUpPageHelpers;
+
 
 
     public SingUpPage(WebDriver driver) {
         this.driver = driver;
         this.elementsHelpers = new ElementsHelpers(driver);
-        this.singUpPageHelpers = new SingUpPageHelpers(driver);
+
 
         PageFactory.initElements(driver, this);
 
 
 
+    }
+    public void selectElementVsText(WebElement element,String text){
+        Select selectMonth = new Select(element);
+        selectMonth.selectByVisibleText(text);
+    }
+    public void selectElementValue(WebElement element,String text){
+        Select selectYear = new Select(element);
+        selectYear.selectByValue(text);
+    }
+    public void selectGender(WebElement element,WebElement element2,String gender) {
+        switch (gender) {
+            case "Mr":
+                element.click();
+                break;
+            case "Mrs":
+                element2.click();
+                break;
+        }
+    }
+    public void selectCountry(WebElement element,String text){
+        while (true){
+            String currentText = element.getAttribute("value");
+            if (currentText.equals(text)){
+                element.sendKeys(Keys.ENTER);
+                break;
+            }
+            element.sendKeys(Keys.ARROW_DOWN);
+        }
     }
 
 
@@ -42,7 +71,7 @@ public class SingUpPage {
     @FindBy(xpath = "//label[@for='id_gender2']")
     WebElement Mrs;
     public void useGender(SignUpFormObjectData data){
-        singUpPageHelpers.selectGender(Mr,Mrs, data.getGender());
+        selectGender(Mr,Mrs, data.getGender());
     }
 
 
@@ -54,17 +83,17 @@ public class SingUpPage {
     @FindBy(id = "days")
     WebElement day;
     public void selectDay(SignUpFormObjectData data){
-        singUpPageHelpers.selectElementVsText(day,data.getDay());
+        selectElementVsText(day,data.getDay());
     }
     @FindBy(id = "months")
     WebElement month;
     public void selectMonth(SignUpFormObjectData data){
-        singUpPageHelpers.selectElementVsText(month, data.getMonth());
+        selectElementVsText(month, data.getMonth());
     }
     @FindBy(id = "years")
     WebElement year;
     public void selectYear(SignUpFormObjectData data){
-        singUpPageHelpers.selectElementValue(year, data.getYear());
+        selectElementValue(year, data.getYear());
     }
     @FindBy(id = "newsletter")
     WebElement news;
@@ -104,7 +133,7 @@ public class SingUpPage {
     @FindBy(id = "country")
     WebElement country;
     public void selectCountry(String text){
-        singUpPageHelpers.selectCountry(country,text);
+        selectCountry(country,text);
     }
 
     @FindBy(id = "state")

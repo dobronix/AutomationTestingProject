@@ -27,7 +27,7 @@ public class SignUp extends Hooks {
     public void SignUpTest() throws InterruptedException {
         signUpFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpFormData.xml", SignUpFormObjectData.class);
         signUpLogInFormObjectDataMap =XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = signUpLogInFormObjectDataMap.get("dataSet_1");
+        SignUpLogInFormObjectData data1 = signUpLogInFormObjectDataMap.get("dataSet_2");
         SignUpFormObjectData data = signUpFormObjectDataMap.get("dataSet_1");
         singUpPage = new SingUpPage(getDriver());
         singUpLoginPage = new SingUpLoginPage(getDriver());
@@ -39,6 +39,7 @@ public class SignUp extends Hooks {
         singUpLoginPage.succesfullSignUp(data1);
         Thread.sleep(2000);
         singUpPage.CompleteSingUp(data);
+        singUpLoginPage.deleteAcc(data1);
 
     }
 }

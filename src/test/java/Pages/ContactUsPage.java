@@ -1,11 +1,14 @@
 package Pages;
 
 import HelperMethods.ElementsHelpers;
+import ObjectData.ContactFormObjectData;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.File;
 
 public class ContactUsPage {
     WebDriver driver;
@@ -33,20 +36,26 @@ public class ContactUsPage {
     @FindBy(xpath = "//div[@class='status alert alert-success']")
     WebElement contactSucces;
 
-    public void fillCname(String text){
-        elementsHelpers.fillElement(contactName,text);
+    public void addFIle(WebElement element,String text) {
+        File shirt = new File(text);
+        String absolutePath = shirt.getAbsolutePath();
+        element.sendKeys(absolutePath);
     }
-    public void fillCemail(String text){
-        elementsHelpers.fillElement(contactEmail,text);
+
+    public void fillCname(ContactFormObjectData data3){
+        elementsHelpers.fillElement(contactName, data3.getName());
     }
-    public void fillSUbject(String text){
-        elementsHelpers.fillElement(contactSubject,text);
+    public void fillCemail(ContactFormObjectData data3){
+        elementsHelpers.fillElement(contactEmail, data3.getEmail());
     }
-    public void fillMessage(String text){
-        elementsHelpers.fillElement(contactMessage,text);
+    public void fillSubject(ContactFormObjectData data3){
+        elementsHelpers.fillElement(contactSubject, data3.getSubject());
+    }
+    public void fillMessage(ContactFormObjectData data3){
+        elementsHelpers.fillElement(contactMessage, data3.getYourmessage());
     }
     public void addCfile(){
-        elementsHelpers.addFIle(contactAddFIle,"src/test/resources/menTshirt.jpg");
+        addFIle(contactAddFIle,"src/test/resources/menTshirt.jpg");
     }
     public void submitContact(){
         elementsHelpers.clickOnElement(contactSubmit);
@@ -57,11 +66,11 @@ public class ContactUsPage {
     public void acceptAllert(){
         elementsHelpers.allert();
     }
-    public void completeContactUsPage(String name, String email, String subject, String yourmessage){
-        fillCname(name);
-        fillCemail(email);
-        fillSUbject(subject);
-        fillMessage(yourmessage);
+    public void completeContactUsPage(ContactFormObjectData data3){
+        fillCname(data3);
+        fillCemail(data3);
+        fillSubject(data3);
+        fillMessage(data3);
         addCfile();
         submitContact();
         acceptAllert();
