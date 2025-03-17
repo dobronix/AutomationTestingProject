@@ -12,7 +12,6 @@ public class HomePage {
     WebDriver driver;
     ElementsHelpers elementsHelpers;
 
-
     public HomePage(WebDriver driver)
     {
         this.driver = driver;

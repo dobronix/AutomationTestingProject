@@ -4,6 +4,7 @@ import HelperMethods.ElementsHelpers;
 import Logger.LoggerUtility;
 import ObjectData.SignUpFormObjectData;
 import com.aventstack.chaintest.plugins.ChainTestListener;
+import dataBase.queries.SignUpTable;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,23 +12,21 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class SingUpPage {
     WebDriver driver;
     ElementsHelpers elementsHelpers;
+    SignUpTable signUpTable;
 
 
 
-    public SingUpPage(WebDriver driver) {
+    public SingUpPage(WebDriver driver) throws SQLException {
         this.driver = driver;
         this.elementsHelpers = new ElementsHelpers(driver);
-
-
+        signUpTable = new SignUpTable();
         PageFactory.initElements(driver, this);
-
-
-
     }
     public void selectElementVsText(WebElement element,String text){
         Select selectMonth = new Select(element);
@@ -58,9 +57,6 @@ public class SingUpPage {
         }
     }
 
-
-
-
     @FindBy(xpath = "//*[@class='login-form']")
     List<WebElement> elements;
     public void clickByText(String SUelements){
@@ -73,8 +69,6 @@ public class SingUpPage {
     public void useGender(SignUpFormObjectData data){
         selectGender(Mr,Mrs, data.getGender());
     }
-
-
     @FindBy(id = "password")
     WebElement password;
     public void fillPasswrod(SignUpFormObjectData data){
@@ -125,17 +119,11 @@ public class SingUpPage {
     public void filladress(SignUpFormObjectData data){
         elementsHelpers.fillElement(address1Field,data.getAdress());
     }
-    /*@FindBy(id = "address2")
-    WebElement address2Field;
-    public void filladress2(String text){
-        elementsHelpers.fillElement(address2Field,text);
-    }*/
     @FindBy(id = "country")
     WebElement country;
     public void selectCountry(String text){
         selectCountry(country,text);
     }
-
     @FindBy(id = "state")
     WebElement state;
     public void fillState(SignUpFormObjectData data){
@@ -170,11 +158,15 @@ public class SingUpPage {
     WebElement continueButton;
     public void clickCont(){
         elementsHelpers.clickOnElement(continueButton);
-
+    }
+    public void addEntryInTable(SignUpFormObjectData data) throws SQLException {
+        signUpTable.insertTableObject(data);
+    }
+    public void updateEntryInTable(SignUpFormObjectData data, Integer id) throws SQLException{
+        signUpTable.updateEntryById(data,id);
     }
 
-
-    public void CompleteSingUp(SignUpFormObjectData data) {
+    public void CompleteSingUp(SignUpFormObjectData data) throws SQLException {
         useGender(data);
         fillPasswrod(data);
         selectDay(data);
@@ -191,6 +183,7 @@ public class SingUpPage {
         fillCity(data);
         fillZip(data);
         fillMobile(data);
+        addEntryInTable(data);
         LoggerUtility.infoTest(" The user complete all the SignUp fields");
         createBUtton();
         LoggerUtility.infoTest(" The user click on CreateAcc button");
@@ -199,10 +192,5 @@ public class SingUpPage {
         LoggerUtility.infoTest(" The user click on Continue button");
         ChainTestListener.log("Sign up completed");
     }
-
-
-
-
-
 
 }

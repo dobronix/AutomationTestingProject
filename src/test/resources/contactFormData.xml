@@ -1,8 +1,36 @@
 <dataSets>
     <dataSet_1>
-        <name>Dobro</name>
-        <email>dobro@dobro.ro</email>
-        <subject>Thank you, the product is what I expected</subject>
-        <yourmessage>Product Arrived</yourmessage>
+        <name>Ion</name>
+        <email>ion@exemplu.ro</email>
+        <subject>Great service, will buy again</subject>
+        <yourmessage>Thank you for the prompt delivery</yourmessage>
     </dataSet_1>
+
+    <dataSet_2>
+        <name>Maria</name>
+        <email>maria@exemplu.ro</email>
+        <subject>Highly recommended</subject>
+        <yourmessage>Perfect quality, I am very satisfied</yourmessage>
+    </dataSet_2>
+
+    <dataSet_3>
+        <name>Andrei</name>
+        <email>andrei@exemplu.ro</email>
+        <subject>Awesome product</subject>
+        <yourmessage>Exactly what I needed, will order more!</yourmessage>
+    </dataSet_3>
+
+    <dataSet_4>
+        <name>Elena</name>
+        <email>elena@exemplu.ro</email>
+        <subject>Fast delivery and good product</subject>
+        <yourmessage>The product was exactly as described</yourmessage>
+    </dataSet_4>
+
+    <dataSet_5>
+        <name>Alexandru</name>
+        <email>alexandru@exemplu.ro</email>
+        <subject>Very satisfied with my purchase</subject>
+        <yourmessage>Thank you, the product arrived safely</yourmessage>
+    </dataSet_5>
 </dataSets>

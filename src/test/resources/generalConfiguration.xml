@@ -1,0 +1,8 @@
+<configuration>
+    <dataBaseConfig>
+        <port>3306</port>
+        <dataBase>LogInSignUp_database</dataBase>
+        <userName>root</userName>
+        <password>Skullcandy1993!</password>
+    </dataBaseConfig>
+</configuration>

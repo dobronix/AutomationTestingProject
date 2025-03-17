@@ -10,6 +10,7 @@ import XmlReaderUtility.XmlReader;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.testng.annotations.Test;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 public class UnsuccessfulLogIn extends Hooks {
@@ -20,9 +21,9 @@ public class UnsuccessfulLogIn extends Hooks {
 
     @Test
 
-    public void unlogInTest(){
+    public void unlogInTest() throws SQLException {
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_5");
+        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_15");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnConsent();

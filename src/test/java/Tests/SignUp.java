@@ -11,6 +11,7 @@ import XmlReaderUtility.XmlReader;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.testng.annotations.Test;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 public class SignUp extends Hooks {
@@ -24,11 +25,11 @@ public class SignUp extends Hooks {
 
     @Test
 
-    public void SignUpTest() throws InterruptedException {
+    public void SignUpTest() throws InterruptedException, SQLException {
         signUpFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpFormData.xml", SignUpFormObjectData.class);
         signUpLogInFormObjectDataMap =XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = signUpLogInFormObjectDataMap.get("dataSet_2");
-        SignUpFormObjectData data = signUpFormObjectDataMap.get("dataSet_1");
+        SignUpLogInFormObjectData data1 = signUpLogInFormObjectDataMap.get("dataSet_19");
+        SignUpFormObjectData data = signUpFormObjectDataMap.get("dataSet_19");
         singUpPage = new SingUpPage(getDriver());
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
@@ -39,7 +40,8 @@ public class SignUp extends Hooks {
         singUpLoginPage.succesfullSignUp(data1);
         Thread.sleep(2000);
         singUpPage.CompleteSingUp(data);
-        singUpLoginPage.deleteAcc(data1);
+        singUpPage.updateEntryInTable(data,2);
+
 
     }
 }

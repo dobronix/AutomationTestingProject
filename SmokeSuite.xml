@@ -1,8 +1,11 @@
 <suite name="Suite Smoke Test" parallel="classes" thread-count="8">
     <test name="Smoke Suite">
         <classes>
-            <class name="Tests.SignUp"/>
             <class name="Tests.SignUpUnsuccessful"/>
+            <class name="Tests.ContactUs"/>
+            <class name="Tests.SuccessfulLogIn"/>
+            <class name="Tests.UnsuccessfulLogIn"/>
+            <class name="Tests.LogOut"/>
         </classes>
     </test>
 </suite>

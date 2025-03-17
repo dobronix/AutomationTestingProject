@@ -1,32 +1,141 @@
 <dataSets>
     <dataSet_1>
-        <fullName>dobro</fullName>
+        <fullName>Dobro Nicu</fullName>
         <email>dobro@dobro.com</email>
         <logInEmail>dobro@dobro.com</logInEmail>
         <logInPassword>12345678</logInPassword>
     </dataSet_1>
+
     <dataSet_2>
-        <fullName>dobro</fullName>
-        <email>dobro123@do2bro.com</email>
-        <logInEmail>dobro123@do2bro.com</logInEmail>
-        <logInPassword>12345678</logInPassword>
+        <fullName>Andrei Ionescu</fullName>
+        <email>andrei@abc.com</email>
+        <logInEmail>andrei@abc.com</logInEmail>
+        <logInPassword>abcdefg1</logInPassword>
     </dataSet_2>
+
     <dataSet_3>
-    <fullName>dobro</fullName>
-    <email>dobro123@dobro.com</email>
-    <logInEmail>dobro123@dobro.com</logInEmail>
-    <logInPassword>12345678</logInPassword>
+        <fullName>Maria Pavlov</fullName>
+        <email>maria@xyz.com</email>
+        <logInEmail>maria@xyz.com</logInEmail>
+        <logInPassword>qwerty123</logInPassword>
     </dataSet_3>
+
     <dataSet_4>
-        <fullName>dobro</fullName>
-        <email>dobro123213@dobro.com</email>
-        <logInEmail>dobro123213@dobro.com</logInEmail>
-        <logInPassword>12345678</logInPassword>
+        <fullName>Ion Vasile</fullName>
+        <email>ion@company.com</email>
+        <logInEmail>ion@company.com</logInEmail>
+        <logInPassword>123qwe456</logInPassword>
     </dataSet_4>
+
     <dataSet_5>
-        <fullName>dobro</fullName>
-        <email>dobro123123123@dobro.com</email>
-        <logInEmail>dobro123123123@dobro.com</logInEmail>
-        <logInPassword>12345678</logInPassword>
+        <fullName>Elena Popescu</fullName>
+        <email>elena@xyz.com</email>
+        <logInEmail>elena@xyz.com</logInEmail>
+        <logInPassword>qwerty098</logInPassword>
     </dataSet_5>
+
+    <dataSet_6>
+        <fullName>Vlad Cristian</fullName>
+        <email>vlad@startup.com</email>
+        <logInEmail>vlad@startup.com</logInEmail>
+        <logInPassword>password321</logInPassword>
+    </dataSet_6>
+
+    <dataSet_7>
+        <fullName>Adriana Radu</fullName>
+        <email>adriana@tech.com</email>
+        <logInEmail>adriana@tech.com</logInEmail>
+        <logInPassword>abc12345</logInPassword>
+    </dataSet_7>
+
+    <dataSet_8>
+        <fullName>Stefan Marin</fullName>
+        <email>stefan@webservices.com</email>
+        <logInEmail>stefan@webservices.com</logInEmail>
+        <logInPassword>testpass1</logInPassword>
+    </dataSet_8>
+
+    <dataSet_9>
+        <fullName>Irina Stanciu</fullName>
+        <email>irina@bigcompany.com</email>
+        <logInEmail>irina@bigcompany.com</logInEmail>
+        <logInPassword>helloWorld1</logInPassword>
+    </dataSet_9>
+
+    <dataSet_10>
+        <fullName>George Alexandru</fullName>
+        <email>george@innovativeco.com</email>
+        <logInEmail>george@innovativeco.com</logInEmail>
+        <logInPassword>qazwsx123</logInPassword>
+    </dataSet_10>
+
+    <dataSet_11>
+        <fullName>Mihaela Popa</fullName>
+        <email>mihaela@creativesolutions.com</email>
+        <logInEmail>mihaela@creativesolutions.com</logInEmail>
+        <logInPassword>1234abcd</logInPassword>
+    </dataSet_11>
+
+    <dataSet_12>
+        <fullName>Mihai Bogdan</fullName>
+        <email>mihai@bluesky.com</email>
+        <logInEmail>mihai@bluesky.com</logInEmail>
+        <logInPassword>123456789</logInPassword>
+    </dataSet_12>
+
+    <dataSet_13>
+        <fullName>Gabriela Mihaila</fullName>
+        <email>gabriela@greentech.com</email>
+        <logInEmail>gabriela@greentech.com</logInEmail>
+        <logInPassword>qwerty12345</logInPassword>
+    </dataSet_13>
+
+    <dataSet_14>
+        <fullName>Daniel Popovici</fullName>
+        <email>daniel@adminsolutions.com</email>
+        <logInEmail>daniel@adminsolutions.com</logInEmail>
+        <logInPassword>admin123</logInPassword>
+    </dataSet_14>
+
+    <dataSet_15>
+        <fullName>Radu Alexe</fullName>
+        <email>radu@xyztech.com</email>
+        <logInEmail>radu@xyztech.com</logInEmail>
+        <logInPassword>123abc456</logInPassword>
+    </dataSet_15>
+
+    <dataSet_16>
+        <fullName>Cosmina Ioan</fullName>
+        <email>cosmina@techworld.com</email>
+        <logInEmail>cosmina@techworld.com</logInEmail>
+        <logInPassword>hello123</logInPassword>
+    </dataSet_16>
+
+    <dataSet_17>
+        <fullName>Vasile Petrescu</fullName>
+        <email>vasile@realestate.com</email>
+        <logInEmail>vasile@realestate.com</logInEmail>
+        <logInPassword>qwerty321</logInPassword>
+    </dataSet_17>
+
+    <dataSet_18>
+        <fullName>Simona Ionut</fullName>
+        <email>simona@marketingpro.com</email>
+        <logInEmail>simona@marketingpro.com</logInEmail>
+        <logInPassword>qwerty4321</logInPassword>
+    </dataSet_18>
+
+    <dataSet_19>
+        <fullName>Ioana Costache</fullName>
+        <email>ioana@techie.com</email>
+        <logInEmail>ioana@techie.com</logInEmail>
+        <logInPassword>secure1234</logInPassword>
+    </dataSet_19>
+
+    <dataSet_20>
+        <fullName>Liviu Petrache</fullName>
+        <email>liviu@testinc.com</email>
+        <logInEmail>liviu@testinc.com</logInEmail>
+        <logInPassword>test123456</logInPassword>
+    </dataSet_20>
 </dataSets>

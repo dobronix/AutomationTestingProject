@@ -9,6 +9,7 @@ import XmlReaderUtility.XmlReader;
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.testng.annotations.Test;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 public class SignUpUnsuccessful extends Hooks {
@@ -19,9 +20,9 @@ public class SignUpUnsuccessful extends Hooks {
 
     @Test
 
-    public void SignUpTestUnsuccessful() {
+    public void SignUpTestUnsuccessful() throws SQLException {
         singUpLogInFormObjectDataMap = XmlReader.loadData("src/test/resources/signUpLogInFormData.xml", SignUpLogInFormObjectData.class);
-        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_4");
+        SignUpLogInFormObjectData data1 = singUpLogInFormObjectDataMap.get("dataSet_20");
         singUpLoginPage = new SingUpLoginPage(getDriver());
         homePage = new HomePage(getDriver());
         homePage.clickOnConsent();
